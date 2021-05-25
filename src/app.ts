@@ -5,16 +5,13 @@ import path from 'path';
 require('./connect');
 
 
-const PORT = 3000
+const PORT = 3001
 
 const app: Application = express();
 app.listen(PORT, () => {
     console.log(`connect in port ${PORT}`);
 })
 
-
-
-console.log("app")
 app.use(express.static(path.join(__dirname, '/public')))
 app.use(cors());
 app.use(express.json());
