@@ -1,4 +1,5 @@
 import userModel from './users.model';
+
 import sequelize from '../connect';
 
 
@@ -9,4 +10,4 @@ sequelize.sync({force: true});
 
 
 
-export { userModel}
+export {userModel}
