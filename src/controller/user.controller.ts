@@ -36,7 +36,7 @@ export default class userControler {
                 const hashPass = await bcrypt.hash(password, 12);
                 const user = await userModel.create({ surname, username, email, password: hashPass })
                 const token = jwt.sign({ email: user.email, name: user.surname }, "123sdcasdasczx");
-                res.status(200).json({message: "create account"});
+                return res.json({token});
             }
             return {message: '"you did not fill in the entire field"'}
         }
