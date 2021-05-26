@@ -8,24 +8,24 @@ import {
   interface MessageAttributes {
     id?: number
     message: string
-    user_id: number
+    UserId: number
   }
   
   class Message extends Model<MessageAttributes>
     implements MessageAttributes {
     public id?: number; 
     public message!: string;
-    public user_id!: number;
+    public UserId!: number;
 
 
     public static  initialization(sequelize: Sequelize){
         this.init(
             {
-              id: {type: DataTypes.INTEGER, autoIncrement: true, unique: true, primaryKey: true },
+              id: {type: DataTypes.INTEGER, autoIncrement: true, unique: true, primaryKey:true},
               message: {
                 type: new DataTypes.STRING(128),
               },
-              user_id: {type: DataTypes.NUMBER}
+              UserId: {type: DataTypes.INTEGER}
             },
                
         
